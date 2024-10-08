@@ -1,0 +1,34 @@
+include ~/.config/i3/theme.conf
+include ~/.config/i3/autostart.conf
+include ~/.config/i3/bindings.conf
+include ~/.config/i3/workspaces.conf
+
+set $mod Mod4
+font pango:monospace 8
+new_window pixel 3
+gaps inner 7
+for_window [class='polybar'] gaps inner 0
+floating_modifier $mod
+tiling_drag modifier titlebar
+set $refresh_i3status killall -SIGUSR1 i3status
+
+set $bgcolor    #189AB4
+set $in-bgcolor #363636
+set $text       #ffffff
+set $u-bgcolor  #ff0000
+set $indicator  #75E6DA
+set $in-text    #969696
+#                       border          background      text            indicator (a line which shows where the next window will be placed)     
+# client.focused          $bgcolor        $bgcolor        $text           $indicator
+# client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+# client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+# client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
+
+# Color Settings
+# class                 border  bground text    indicator child_border
+client.focused          #A7C980 #A7C980 #2D353B #A7C980   #A7C980
+client.focused_inactive #3D484D #2D353B #859289 #3D484D   #3D484D
+client.unfocused        #3D484D #2D353B #859289 #3D484D   #3D484D
+client.urgent           #E67E80 #E67E80 #2D353B #E67E80   #E67E80
+client.placeholder      #2D353B #2D353B #859289 #2D353B   #2D353B
+client.background       #2D353B
